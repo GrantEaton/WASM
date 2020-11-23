@@ -2,6 +2,10 @@
 // import "wasi";
 // import {Console} from "as-wasi";
 
+// declare namespace console {
+//   function log(val: string): void;
+// }
+
 export function add(a: i32, b: i32): i32 {
   return a + b;
 }
@@ -21,7 +25,7 @@ export function isPrime(x: u32): bool {
 }
 
 export function MergeSort(arr: Array<i8>): Array<i8> {
-  // Console.log("hello");
+  // console.log("hello");
   return divide(arr);
 }
 

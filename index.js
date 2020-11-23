@@ -5,6 +5,12 @@ const imports = {
     abort(_msg, _file, line, column) {
        console.error("abort called at index.ts:" + line + ":" + column);
     }
+  },
+  console: {
+    // import as console.log
+    log(value) {
+      console.log(value);
+    }
   }
 };
 Object.defineProperty(module, "exports", {
