@@ -1,0 +1,61 @@
+Arguments: 
+  /Users/granteaton/.nvm/versions/node/v12.15.0/bin/node /Users/granteaton/.nvm/versions/node/v12.15.0/bin/yarn init asbuild
+
+PATH: 
+  /Users/granteaton/google-cloud-sdk/bin:/Users/granteaton/.nvm/versions/node/v12.15.0/bin:/Users/granteaton/.wasmtime/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.15.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (/Users/granteaton/.nvm/versions/node/v12.15.0/lib/node_modules/yarn/lib/cli.js:136216:13)
+      at Interface.emit (events.js:223:5)
+      at Interface._ttyWrite (readline.js:885:16)
+      at ReadStream.onkeypress (readline.js:191:10)
+      at ReadStream.emit (events.js:223:5)
+      at emitKeys (internal/readline/utils.js:433:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1151:36)
+      at ReadStream.emit (events.js:223:5)
+      at addChunk (_stream_readable.js:309:12)
+
+npm manifest: 
+  {
+    "name": "WASM",
+    "version": "1.0.0",
+    "description": "testing assemblyscript",
+    "main": "index.js",
+    "scripts": {
+      "test": "te4st",
+      "asbuild:wasi": "asc assembly/index.ts -b build/wasi.wasm -t build/wasi.wat --runtime half",
+      "asbuild:untouched": "asc assembly/index.ts --target debug",
+      "asbuild:optimized": "asc assembly/index.ts --target release",
+      "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+      "asbuild:watch": "onchange -i 'assembly/**/*' -- npm run asbuild",
+      "serve-demo": "static-server"
+    },
+    "author": "you, idiot",
+    "license": "ISC",
+    "dependencies": {
+      "@assemblyscript/loader": "^0.17.2"
+    },
+    "devDependencies": {
+      "as-wasi": "^0.4.3",
+      "assemblyscript": "^0.17.2",
+      "benchmark": "^2.1.4",
+      "static-server": "^2.2.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
